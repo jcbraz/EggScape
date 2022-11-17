@@ -40,8 +40,11 @@ Topics:
  - Game:
 	- Framework (bring everything together)
 
-Sara: 
+Sara: I will try to make the landscape and look into how to make the map interactive and collitions
 - Interactive map https://www.youtube.com/watch?v=W4c0MGl1eyE
 - Make tilemap https://www.youtube.com/watch?v=SteMRdOYrds
-- 
+- Collitions https://www.youtube.com/watch?v=qfTbzc5Qzok
 
+Patrick: 
+- Modelling
+- 
