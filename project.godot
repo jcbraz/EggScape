@@ -11,12 +11,20 @@ config_version=4
 [application]
 
 config/name="Egg Scape"
-run/main_scene="res://src/Player.tscn"
+run/main_scene="res://src/assets/Landscape.tscn"
 config/icon="res://icon.png"
 
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+
+[input]
+
+Action_a={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":70,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [mono]
 
