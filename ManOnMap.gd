@@ -1,7 +1,11 @@
 extends KinematicBody2D
 
+
 var speed = 250
 var velocity = Vector2()
+
+onready var mapscene_GUI = get_node("../GUI")
+
 
 func get_input():
 	# Detect up/down/left/right keystate and only move when pressed.
@@ -19,3 +23,11 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	move_and_collide(velocity * delta)
+	
+	for index in get_slide_count():
+		var collision = get_slide_collision(index)
+		if collision.collider is StaticBody2D:
+			print("Collided with static body")
+
+
+

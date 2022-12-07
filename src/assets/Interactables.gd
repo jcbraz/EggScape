@@ -23,6 +23,6 @@ func _ready():
 		
 		add_child(loot_area_instance)
 	for area in get_tree().get_nodes_in_group("LootAreas"):
-		area.connect("body_entered", mapscene_GUI, "OnLootAreaEnter", [area.tile, area.tile_id])
-		area.connect("body_exited", mapscene_GUI, "OnLootAreaExit")
+		area.connect("body_entered", mapscene_GUI, "OnsLootAreaEnter", [area.tile, area.tile_id])
+		area.connect("body_exited", mapscene_GUI, "OnsLootAreaExit")
 # Probably dont need if, just always vector (0,0) for closed chest
