@@ -35,16 +35,17 @@ func _process(delta):
 							#var n = get_node(path)
 							sprite_node.set_texture(tree_images[tree_stage])
 							tree_stage += 1
-						else:
+						elif tree_stage == 5:
 							var sprite_node = tree_loot_node.get_parent().get_node("Sprite2")
-							sprite_node.set_texture(tree_images[5])
+							sprite_node.queue_free()
+							
 							tree_loot_node.queue_free()
 							
 							print(tree_loot_node)
 							#var n = get_node(path)
 							
-							print("restart tree")
-							tree_stage = 0
+							
+							tree_stage = 6
 					"rock":
 						print("Opening the chest")
 				#get_node("../Destructables").set_cell(tile[0], tile[1], tile_id, false, false, false, Vector2(0,0))
@@ -57,7 +58,10 @@ func OnLootTreeEnter(node_in, n):
 	print(n)
 	object_type = "tree"
 	action_a_state = "Loot"
-
+	if tree_stage == 6:
+		print("restart tree")
+		tree_stage = 0
+	
 	
 func OnLootTreeESxit(body):
 	action_a_state = "Off"

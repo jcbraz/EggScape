@@ -1,7 +1,7 @@
 extends Node2D
 
 onready var camera = $Camera2D
-onready var player = $YSort/player
+onready var player = $Base_ground/YSorting/player
 
 
 func _ready():

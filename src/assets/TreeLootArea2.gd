@@ -5,7 +5,7 @@ var type
 
 #onready var GUI = get_node("../GUI")
 
-onready var mapscene_GUI = get_node("../../../GUI")
+onready var mapscene_GUI = get_node("../../../../GUI")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

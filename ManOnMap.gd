@@ -1,10 +1,10 @@
 extends KinematicBody2D
 
 
-var speed = 250
+var speed = 500
 var velocity = Vector2()
 
-onready var mapscene_GUI = get_node("../GUI")
+onready var mapscene_GUI = get_node("../../../GUI")
 
 
 func get_input():
