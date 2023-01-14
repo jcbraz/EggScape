@@ -9,3 +9,4 @@ func _ready():
 	
 func _process(delta):
 	camera.set_position(player.get_position())
+#x: 256, y: 146

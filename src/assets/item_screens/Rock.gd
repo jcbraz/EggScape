@@ -1,5 +1,5 @@
 extends StaticBody2D
-
+onready var mapscene_GUI = get_node("../../../../GUI")
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -13,14 +13,19 @@ var rng = RandomNumberGenerator.new()
 func _ready():
 	rng.randomize()
 	print(self)
-	var xt = rng.randf_range(width*100, 0)
-	var yt = rng.randf_range(-heigth*50, 0)
+	var xt = rng.randf_range(-width, 0)
+	var yt = rng.randf_range(-heigth, 0)
+	self.position += Vector2(xt*146, yt*256)
 
-	self.position += Vector2(xt, yt)
+
+
+	
 
 	pass
 
-
+#x: 256, y: 146
+# TODO: Find a way to place the rocks on one exact tile. Do the same for river and trees. 
+# Da er resten plankekjøring
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
