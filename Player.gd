@@ -24,9 +24,5 @@ func _physics_process(delta: float) -> void:
 			_snap_vector = Vector3.ZERO
 		elif has_landed:
 			_snap_vector = Vector3.DOWN
-		_velocity = move_and_slide_with_snap(_velocity, _snap_vector, Vector3.UP, true)
-
-// this is a test
-// to teach github commands		
-	
+			_velocity = move_and_slide_with_snap(_velocity, _snap_vector, Vector3.UP, true)
 	
