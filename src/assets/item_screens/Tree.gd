@@ -1,5 +1,6 @@
 extends StaticBody2D
 
+onready var mapscene_GUI = get_node("../../../../GUI")
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -13,12 +14,14 @@ var rng = RandomNumberGenerator.new()
 func _ready():
 	rng.randomize()
 	print(self)
-	var xt = rng.randf_range(width*100, 0)
-	var yt = rng.randf_range(-heigth*50, 0)
-
-	self.position += Vector2(xt, yt)
-
+	var xt = rng.randf_range(-width, 0)
+	var yt = rng.randf_range(-heigth, 0)
+	self.position += Vector2(xt*148, yt*256)
+	
 	pass
+
+
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,0 +1,11 @@
+[gd_scene format=2]
+
+[node name="RiverLootArea" type="Area2D" groups=["LootAreas"]]
+collision_layer = 0
+collision_mask = 2
+
+[node name="RiverCo" type="CollisionPolygon2D" parent="."]
+position = Vector2( 70, 141.221 )
+rotation = 0.785398
+scale = Vector2( 9.48482, 3.50741 )
+polygon = PoolVector2Array( 18.6959, -23.229, 4.20846, -12.2215, 0.281733, 29.3896, 14.532, 17.9427 )
