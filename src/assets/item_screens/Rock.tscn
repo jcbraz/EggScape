@@ -15,7 +15,7 @@ script = ExtResource( 3 )
 position = Vector2( 0, 50 )
 texture = ExtResource( 2 )
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+[node name="RockCol" type="CollisionPolygon2D" parent="."]
 position = Vector2( 1, 32 )
 build_mode = 1
 polygon = PoolVector2Array( 126, 46, 130, -107, 11, -34, -128, -106, -129, 37, 3, 121 )

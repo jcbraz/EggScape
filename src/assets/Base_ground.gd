@@ -1,10 +1,12 @@
+tool
 extends TileMap
 
-var height = 60;
+var height = 20;
 var width = 20;
 
 var nr_dirt = 200
-var nr_trees = 40
+var nr_trees = 10
+
 var nr_rocks = 20
 
 var grass_id = 10
@@ -66,6 +68,7 @@ func make_trees():
 	for t in range(nr_trees): 
 		var name = "tree_scene" + str(t)
 		name = preload("res://src/assets/item_screens/Tree.tscn")
+		get_node(name).position = Vector2(0,0)
 		$YSorting.add_child(name.instance(), true)	
 		
 func make_rocks():

@@ -22,6 +22,7 @@ var river_loot_area
 var x
 var y
 
+
 var tree_stage = 0
 var rock_stage = 0
 var river_stage = 0
@@ -66,8 +67,8 @@ func _process(delta):
 							tree_stage += 1
 						elif tree_stage == 5:
 							var sprite_node = tree_loot_node.get_parent().get_node("Sprite2")
+							tree_loot_node.get_parent().get_node("TreeCol").queue_free()
 							sprite_node.queue_free()
-							
 							tree_loot_node.queue_free()
 							
 							print(tree_loot_node)
@@ -85,6 +86,7 @@ func _process(delta):
 							rock_stage += 1
 						elif rock_stage == 3:
 							var sprite_node = rock_loot_node.get_parent().get_node("RockSprite")
+							loot_node.get_parent().get_node("RockCol").queue_free()
 							sprite_node.queue_free()
 							
 							rock_loot_node.queue_free()
@@ -107,10 +109,13 @@ func _process(delta):
 							get_node(str(river_loot_area.get_path()) + "/RiverCo").set_deferred("disabled", true)
 							print("Disabled loot area: ",river_loot_area)
 							river_stage = 7
+							spade = false
 					"Boat":
 						print("WE are pressing on boat")
 						if logs and granite: 
 							spade = true
+							logs = false
+							granite = false
 							print("You now have a spade")
 						if logs: 
 							print("Keeping logs in the boat")
@@ -118,60 +123,27 @@ func _process(delta):
 							print("Keeping granite in the boat")
 							
 				pass
-
-
-func OnLootTreeEnter(node_in, n):
-	print("looting")
-	tree_loot_node = n
-	print(n)
-	object_type = "tree"
-	action_a_state = "Loot"
-	if tree_stage == 6:
-		print("restart tree")
-		tree_stage = 0
-	
-	
-func OnLootTreeESxit(body):
-	action_a_state = "Off"
-	#	print("leaving")
-	
-	
-func OnLootRockEnter(node_in, n):
-	#print("looting")
-	rock_loot_node = n
-	print(n)
-	object_type = "rock"
-	action_a_state = "Loot"
-	if rock_stage == 6:
-		print("restart rock")
-		rock_stage = 0
-	
-	
-func OnLootRockESxit(body):
-	action_a_state = "Off"
-	#print("leaving")
 	
 func OnRiverLootAreaEnter(body, tile, loot_area):
 	#print("Entering river on tile: ", tile)
 	#print("Entering area: ",loot_area)
-	if "River" in str(loot_area):
-		action_a_state = "Loot"
-		object_type = "River"
-		print("river stage: ", river_stage)
-		#x = tile[0]
-		#y = tile[1] - 1
-		if river_stage == 0 :
-			print("River stage zero!")
-			#river_cell_ip = Vector2(x,y)
-			x = tile[0]
-			y = tile[1] -1
-			river_loot_area = loot_area
-		if river_stage == 7:
-			print("restart river")
-			river_stage = 0
+	
+	action_a_state = "Loot"
+	object_type = "River"
+	print("river stage: ", river_stage)
+	#x = tile[0]
+	#y = tile[1] - 1
+	if river_stage == 0 :
+		print("River stage zero!")
+		#river_cell_ip = Vector2(x,y)
+		x = tile[0]
+		y = tile[1] -1
+		river_loot_area = loot_area
+	if river_stage == 7:
+		print("restart river")
+		river_stage = 0
 			
-	else:
-		print("odd loot")
+
 
 
 func OnRiverLootAreaExit(body, loot_area):
@@ -190,6 +162,8 @@ func OnLootEnter(body, n, type):
 	if rock_stage == 4:
 		print("restart rock")
 		rock_stage = 0
+	
+	
 		
 func OnLootExit():
 	action_a_state = "Off"
