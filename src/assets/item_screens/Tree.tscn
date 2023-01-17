@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/assets/item_screens/TreeLootArea.gd" type="Script" id=1]
+[ext_resource path="res://Modeling/results/PIctures/PNGs/Tree1_1B_Full.png" type="Texture" id=2]
+[ext_resource path="res://src/assets/item_screens/Tree.gd" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 176.102
+
+[node name="Tree2" type="StaticBody2D"]
+position = Vector2( -177, 240 )
+script = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 0, 50 )
+texture = ExtResource( 2 )
+
+[node name="TreeCol" type="CollisionPolygon2D" parent="."]
+position = Vector2( 1, 32 )
+build_mode = 1
+polygon = PoolVector2Array( 14, 40, 80, -34, -29, -82, -87, -34, -89, 39, -40, 73 )
+
+[node name="TreeLootArea" type="Area2D" parent="." groups=["TreeLoot"]]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeLootArea"]
+shape = SubResource( 2 )
