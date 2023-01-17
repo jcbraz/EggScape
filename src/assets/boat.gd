@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 
 var speed = 50
-var velocity = Vector2(10, -6)
+var velocity = Vector2(5, -3)
 var direction = Vector2(45, 45)
 onready var mapscene_GUI = get_node("../../../GUI")
 var count = 0

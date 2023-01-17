@@ -1,10 +1,9 @@
-tool
 extends TileMap
 
-var height = 20;
+var height = 200;
 var width = 20;
 
-var nr_dirt = 200
+var nr_dirt = 600
 var nr_trees = 10
 
 var nr_rocks = 20
@@ -23,18 +22,9 @@ var loot_area = preload("res://src/assets/RiverLootArea.tscn")
 
 
 func _ready():
-	randomize()
-	#make_grass();
-	#make_dirt();
+	make_dirt();
 	init_river();
-	#make_trees();
-	#make_rocks();
-	#river();
 
-"""func make_grass():
-	for x in width: 
-		for y in height: 
-			set_cell(-x,-y,grass_id)
 
 func make_dirt():
 	for d in nr_dirt: 
@@ -42,7 +32,7 @@ func make_dirt():
 		var x = rng.randf_range(-width, 0)
 		var y = rng.randf_range(-height, 0)
 		set_cell(x,y,dirt_id)
-"""
+
 func init_river():
 
 	set_cell(-10,0,river_id)
@@ -64,11 +54,11 @@ func init_river():
 		loot_area_instance.connect("body_entered", mapscene_GUI, "OnRiverLootAreaEnter", [Vector2(i, -3), loot_area_instance])
 		loot_area_instance.connect("body_exited", mapscene_GUI, "OnRiverLootAreaExit", [loot_area_instance])
 		
-func make_trees():
+"""func make_trees():
 	for t in range(nr_trees): 
 		var name = "tree_scene" + str(t)
 		name = preload("res://src/assets/item_screens/Tree.tscn")
-		#get_node(name).position = Vector2(0,0)
+
 		$YSorting.add_child(name.instance(), true)	
 		
 func make_rocks():
@@ -76,6 +66,7 @@ func make_rocks():
 		var name = "rock_scene" + str(r)
 		name = preload("res://src/assets/item_screens/Rock.tscn")
 		$YSorting.add_child(name.instance(), true)
+"""	
 	
 """func river():
 	var river_tile = get_used_cells_by_id(0)
@@ -104,15 +95,12 @@ func update_river(x, y, river_stage):
 
 	if river_stage == 5:
 		var loot_area_instance = loot_area.instance()
-
 		loot_area_instance.position = map_to_world(Vector2(x,y))
-
 		add_child(loot_area_instance)
-		print("Adding child on area:",Vector2(x,y))
+		
 		loot_area_instance.connect("body_entered", mapscene_GUI, "OnRiverLootAreaEnter", [Vector2(x,y), loot_area_instance])
 		loot_area_instance.connect("body_exited", mapscene_GUI, "OnRiverLootAreaExit", [loot_area_instance])
 	
-
 func _process(delta):
 
 	pass

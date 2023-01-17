@@ -116,8 +116,10 @@ func _process(delta):
 							#get_node(str(river_loot_area.get_path()) + "/RiverCo").set_deferred("disabled", true)
 							get_node(str(river_loot_area.get_path()) + "/RiverCo").queue_free()
 							print("Disabled loot area: ",river_loot_area)
-							river_stage = 7
+							river_stage = 0
 							nr_spade -= 1
+							print("OFF AND RESTART")
+							action_a_state = "Off"
 					"Boat":
 						print("WE are pressing on boat")
 						
@@ -128,37 +130,28 @@ func _process(delta):
 							print("You now have spade: ", nr_spade)
 							print("Nr of logs left: ", nr_logs)
 							print("Nr of granite left: ", nr_granite)
-							holding = false
-						else: 
-							holding = false
-							print("Your hands are free")
-							
+
+						holding = false
+						print("Your hands are free")		
 				pass
 	
-func OnRiverLootAreaEnter(body, tile, loot_area):
-	#print("Entering river on tile: ", tile)
-	#print("Entering area: ",loot_area)
+func OnRiverLootAreaEnter(body, tile, loot_areai):
+
 	if "boat" in str(body):
 		print("Boat is close to edge")
 		get_node("../Base_ground/YSorting/boat").boat_crashing()
-	print(body)
-	action_a_state = "Loot"
-	object_type = "River"
-	print("river stage: ", river_stage)
-	#x = tile[0]
-	#y = tile[1] - 1
-	if river_stage == 0 :
-		print("River stage zero!")
-		#river_cell_ip = Vector2(x,y)
-		x = tile[0]
-		y = tile[1] -1
-		river_loot_area = loot_area
-	if river_stage == 7:
-		print("restart river")
-		river_stage = 0
-			
+	else:
+		print(body)
+		action_a_state = "Loot"
+		object_type = "River"
+		print("river stage: ", river_stage)
 
-
+		if river_stage == 0 :
+			print("River stage zero!")
+			#river_cell_ip = Vector2(x,y)
+			x = tile[0]
+			y = tile[1] -1
+			river_loot_area = loot_areai
 
 func OnRiverLootAreaExit(body, loot_area):
 	if "River" in str(loot_area):	
@@ -166,16 +159,17 @@ func OnRiverLootAreaExit(body, loot_area):
 	
 func OnLootEnter(body, n, type):
 	#print("On general enter: ", type)
-	object_type = type
-	loot_node = n
-	action_a_state = "Loot"
-	if tree_stage == 6:
-		print("restart tree")
-		tree_stage = 0
-		
-	if rock_stage == 4:
-		print("restart rock")
-		rock_stage = 0
+	if "player" in str(body):
+		object_type = type
+		loot_node = n
+		action_a_state = "Loot"
+		if tree_stage == 6:
+			print("restart tree")
+			tree_stage = 0
+			
+		if rock_stage == 4:
+			print("restart rock")
+			rock_stage = 0
 	
 	
 		
