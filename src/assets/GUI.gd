@@ -11,11 +11,10 @@ var loot_node
 
 var path
 
-var granite = true
-var logs = false
-
-var spade = false
-
+var nr_granite = 1
+var nr_logs = 0
+var nr_spade = 0
+var holding = false
 
 var river_loot_area 
 
@@ -57,48 +56,56 @@ func _process(delta):
 			"Loot":
 				match object_type:
 					"Tree":
-						tree_loot_node = loot_node
-						if tree_stage <= 4:
-							
-							var sprite_node = tree_loot_node.get_parent().get_node("Sprite2")
-							print(tree_loot_node)
-							#var n = get_node(path)
-							sprite_node.set_texture(tree_images[tree_stage])
-							tree_stage += 1
-						elif tree_stage == 5:
-							var sprite_node = tree_loot_node.get_parent().get_node("Sprite2")
-							tree_loot_node.get_parent().get_node("TreeCol").queue_free()
-							sprite_node.queue_free()
-							tree_loot_node.queue_free()
-							
-							print(tree_loot_node)
-							#var n = get_node(path)
+						if holding:
+							print("Your hands are full, go load of in the boat")
+						else:
+						#tree_loot_node = loot_node
+							if tree_stage <= 4:
+								
+								var sprite_node = loot_node.get_parent().get_node("Sprite2")
+								print(loot_node)
+								#var n = get_node(path)
+								sprite_node.set_texture(tree_images[tree_stage])
+								tree_stage += 1
+							elif tree_stage == 5:
+								var sprite_node = loot_node.get_parent().get_node("Sprite2")
+								loot_node.get_parent().get_node("TreeCol").queue_free()
+								sprite_node.queue_free()
+								loot_node.queue_free()
+								
+								print(loot_node)
+								#var n = get_node(path)
 
-							tree_stage = 6
-							logs = true
+								tree_stage = 6
+								nr_logs += 1
+								holding = true
 					"Rock":
-						rock_loot_node = loot_node
-						if rock_stage <= 2:
-							var sprite_node = rock_loot_node.get_parent().get_node("RockSprite")
-							#print(rock_loot_node)
-							#var n = get_node(path)
-							sprite_node.set_texture(rock_images[rock_stage])
-							rock_stage += 1
-						elif rock_stage == 3:
-							var sprite_node = rock_loot_node.get_parent().get_node("RockSprite")
-							loot_node.get_parent().get_node("RockCol").queue_free()
-							sprite_node.queue_free()
+						if holding:
+							print("Your hands are full, go load of in the boat")
 							
-							rock_loot_node.queue_free()
-							rock_stage = 4
-							granite = true
-							#print(rock_loot_node)
+						else:
+							if rock_stage <= 2:
+								var sprite_node = loot_node.get_parent().get_node("RockSprite")
+								#print(rock_loot_node)
+								#var n = get_node(path)
+								sprite_node.set_texture(rock_images[rock_stage])
+								rock_stage += 1
+							elif rock_stage == 3:
+								var sprite_node = loot_node.get_parent().get_node("RockSprite")
+								loot_node.get_parent().get_node("RockCol").queue_free()
+								sprite_node.queue_free()
+								
+								loot_node.queue_free()
+								rock_stage = 4
+								nr_granite += 1
+								holding = true
+								#print(rock_loot_node)
 					"River":
 						print("river stage: ", river_stage)
-						if not spade:
+						if not nr_spade:
 							print("You need a spade to dig!!")
 							
-						if spade and river_stage <= 5:
+						if nr_spade and river_stage <= 5:
 
 							#if get_node("../Base_ground").get_cell(x,y) == 10 or 9:
 							get_node("../Base_ground").update_river(x, y, river_stage)
@@ -106,28 +113,35 @@ func _process(delta):
 							#loot_area_instance.tile_region = get_cell_autotile_coord(tile[0], tile[1])
 						if river_stage == 6:	
 							print("river stage: ", river_stage)
-							get_node(str(river_loot_area.get_path()) + "/RiverCo").set_deferred("disabled", true)
+							#get_node(str(river_loot_area.get_path()) + "/RiverCo").set_deferred("disabled", true)
+							get_node(str(river_loot_area.get_path()) + "/RiverCo").queue_free()
 							print("Disabled loot area: ",river_loot_area)
 							river_stage = 7
-							spade = false
+							nr_spade -= 1
 					"Boat":
 						print("WE are pressing on boat")
-						if logs and granite: 
-							spade = true
-							logs = false
-							granite = false
-							print("You now have a spade")
-						if logs: 
-							print("Keeping logs in the boat")
-						if granite: 
-							print("Keeping granite in the boat")
+						
+						if nr_logs > 0 and nr_granite > 0: 
+							nr_spade += 2
+							nr_logs -= 1
+							nr_granite -= 1
+							print("You now have spade: ", nr_spade)
+							print("Nr of logs left: ", nr_logs)
+							print("Nr of granite left: ", nr_granite)
+							holding = false
+						else: 
+							holding = false
+							print("Your hands are free")
 							
 				pass
 	
 func OnRiverLootAreaEnter(body, tile, loot_area):
 	#print("Entering river on tile: ", tile)
 	#print("Entering area: ",loot_area)
-	
+	if "boat" in str(body):
+		print("Boat is close to edge")
+		get_node("../Base_ground/YSorting/boat").boat_crashing()
+	print(body)
 	action_a_state = "Loot"
 	object_type = "River"
 	print("river stage: ", river_stage)

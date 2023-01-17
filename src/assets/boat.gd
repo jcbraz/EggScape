@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 
 var speed = 50
-var velocity = Vector2()
+var velocity = Vector2(10, -6)
 var direction = Vector2(45, 45)
 onready var mapscene_GUI = get_node("../../../GUI")
 var count = 0
@@ -21,9 +21,9 @@ var boat_images = [boat1, boat2, boat3, boat4, boat5, boat6, boat7, boat8]
 
 func _physics_process(delta):
 	count += 1
-	velocity = Vector2(5, -3)
+	#velocity = Vector2(10, -6)
 	move_and_collide(velocity * delta)
-	if count > 30:
+	if count > 20:
 
 		count = 0
 		if boat_nr != 7:
@@ -38,6 +38,8 @@ func _physics_process(delta):
 		if collision.collider is StaticBody2D:
 			print("Collided with static body")
 	
-
+func boat_crashing():
+	print("Boat is crashing!")
+	velocity = Vector2(0,0)
 
 

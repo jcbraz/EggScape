@@ -24,14 +24,14 @@ var loot_area = preload("res://src/assets/RiverLootArea.tscn")
 
 func _ready():
 	randomize()
-	make_grass();
-	make_dirt();
+	#make_grass();
+	#make_dirt();
 	init_river();
-	make_trees();
-	make_rocks();
+	#make_trees();
+	#make_rocks();
 	#river();
 
-func make_grass():
+"""func make_grass():
 	for x in width: 
 		for y in height: 
 			set_cell(-x,-y,grass_id)
@@ -42,7 +42,7 @@ func make_dirt():
 		var x = rng.randf_range(-width, 0)
 		var y = rng.randf_range(-height, 0)
 		set_cell(x,y,dirt_id)
-
+"""
 func init_river():
 
 	set_cell(-10,0,river_id)
@@ -68,7 +68,7 @@ func make_trees():
 	for t in range(nr_trees): 
 		var name = "tree_scene" + str(t)
 		name = preload("res://src/assets/item_screens/Tree.tscn")
-		get_node(name).position = Vector2(0,0)
+		#get_node(name).position = Vector2(0,0)
 		$YSorting.add_child(name.instance(), true)	
 		
 func make_rocks():

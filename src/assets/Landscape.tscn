@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Modeling/results/PIctures/PNGs/Boat1.png" type="Texture" id=1]
 [ext_resource path="res://Modeling/results/PIctures/PNGs/Character_Standing_DownRight.png" type="Texture" id=2]
@@ -7,7 +7,9 @@
 [ext_resource path="res://src/assets/BoatLootArea.gd" type="Script" id=5]
 [ext_resource path="res://ManOnMap.gd" type="Script" id=6]
 [ext_resource path="res://src/assets/Landscape.gd" type="Script" id=7]
+[ext_resource path="res://src/assets/item_screens/Rock.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/assets/GUI.gd" type="Script" id=9]
+[ext_resource path="res://src/assets/item_screens/Tree.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/assets/Base_ground.gd" type="Script" id=11]
 
 [sub_resource type="GDScript" id=3]
@@ -49,19 +51,22 @@ tile_set = ExtResource( 4 )
 cell_size = Vector2( 256, 146 )
 compatibility_mode = true
 format = 1
+tile_data = PoolIntArray( -1310739, 10, 0, -1310738, 10, 0, -1310737, 10, 0, -1310736, 10, 0, -1310735, 10, 0, -1310734, 10, 0, -1310733, 10, 0, -1310732, 10, 0, -1310731, 10, 0, -1310730, 10, 0, -1310729, 10, 0, -1310728, 10, 0, -1310727, 10, 0, -1310726, 10, 0, -1310725, 10, 0, -1310724, 10, 0, -1310723, 10, 0, -1310722, 10, 0, -1310721, 10, 0, -1376256, 10, 0, -1245203, 10, 0, -1245202, 10, 0, -1245201, 10, 0, -1245200, 10, 0, -1245199, 10, 0, -1245198, 10, 0, -1245197, 10, 0, -1245196, 10, 0, -1245195, 10, 0, -1245194, 10, 0, -1245193, 10, 0, -1245192, 10, 0, -1245191, 10, 0, -1245190, 10, 0, -1245189, 10, 0, -1245188, 10, 0, -1245187, 10, 0, -1245186, 10, 0, -1245185, 10, 0, -1310720, 10, 0, -1179667, 9, 0, -1179666, 9, 0, -1179665, 10, 0, -1179664, 9, 0, -1179663, 9, 0, -1179662, 9, 0, -1179661, 10, 0, -1179660, 9, 0, -1179659, 9, 0, -1179658, 9, 0, -1179657, 9, 0, -1179656, 9, 0, -1179655, 10, 0, -1179654, 9, 0, -1179653, 9, 0, -1179652, 9, 0, -1179651, 9, 0, -1179650, 9, 0, -1179649, 9, 0, -1245184, 9, 0, -1114131, 9, 0, -1114130, 9, 0, -1114129, 9, 0, -1114128, 9, 0, -1114127, 10, 0, -1114126, 10, 0, -1114125, 9, 0, -1114124, 9, 0, -1114123, 10, 0, -1114122, 10, 0, -1114121, 9, 0, -1114120, 9, 0, -1114119, 9, 0, -1114118, 9, 0, -1114117, 9, 0, -1114116, 10, 0, -1114115, 9, 0, -1114114, 10, 0, -1114113, 9, 0, -1179648, 10, 0, -1048595, 9, 0, -1048594, 9, 0, -1048593, 9, 0, -1048592, 9, 0, -1048591, 10, 0, -1048590, 9, 0, -1048589, 9, 0, -1048588, 9, 0, -1048587, 10, 0, -1048586, 9, 0, -1048585, 9, 0, -1048584, 9, 0, -1048583, 9, 0, -1048582, 9, 0, -1048581, 10, 0, -1048580, 9, 0, -1048579, 9, 0, -1048578, 9, 0, -1048577, 10, 0, -1114112, 10, 0, -983059, 10, 0, -983058, 9, 0, -983057, 9, 0, -983056, 9, 0, -983055, 9, 0, -983054, 10, 0, -983053, 9, 0, -983052, 10, 0, -983051, 9, 0, -983050, 9, 0, -983049, 9, 0, -983048, 9, 0, -983047, 10, 0, -983046, 9, 0, -983045, 10, 0, -983044, 9, 0, -983043, 10, 0, -983042, 9, 0, -983041, 10, 0, -1048576, 10, 0, -917523, 10, 0, -917522, 9, 0, -917521, 9, 0, -917520, 9, 0, -917519, 9, 0, -917518, 9, 0, -917517, 9, 0, -917516, 10, 0, -917515, 10, 0, -917514, 9, 0, -917513, 9, 0, -917512, 10, 0, -917511, 9, 0, -917510, 9, 0, -917509, 9, 0, -917508, 9, 0, -917507, 9, 0, -917506, 10, 0, -917505, 9, 0, -983040, 9, 0, -851987, 9, 0, -851986, 10, 0, -851985, 9, 0, -851984, 9, 0, -851983, 9, 0, -851982, 10, 0, -851981, 9, 0, -851980, 9, 0, -851979, 10, 0, -851978, 9, 0, -851977, 9, 0, -851976, 10, 0, -851975, 10, 0, -851974, 9, 0, -851973, 9, 0, -851972, 9, 0, -851971, 9, 0, -851970, 10, 0, -851969, 9, 0, -917504, 9, 0, -786451, 9, 0, -786450, 9, 0, -786449, 9, 0, -786448, 9, 0, -786447, 9, 0, -786446, 9, 0, -786445, 10, 0, -786444, 10, 0, -786443, 10, 0, -786442, 10, 0, -786441, 10, 0, -786440, 9, 0, -786439, 10, 0, -786438, 9, 0, -786437, 9, 0, -786436, 9, 0, -786435, 9, 0, -786434, 9, 0, -786433, 9, 0, -851968, 9, 0, -720915, 10, 0, -720914, 9, 0, -720913, 9, 0, -720912, 10, 0, -720911, 10, 0, -720910, 10, 0, -720909, 10, 0, -720908, 10, 0, -720907, 10, 0, -720906, 9, 0, -720905, 9, 0, -720904, 10, 0, -720903, 9, 0, -720902, 9, 0, -720901, 10, 0, -720900, 10, 0, -720899, 10, 0, -720898, 9, 0, -720897, 10, 0, -786432, 9, 0, -655379, 9, 0, -655378, 9, 0, -655377, 9, 0, -655376, 10, 0, -655375, 10, 0, -655374, 10, 0, -655373, 10, 0, -655372, 10, 0, -655371, 9, 0, -655370, 10, 0, -655369, 9, 0, -655368, 10, 0, -655367, 9, 0, -655366, 10, 0, -655365, 10, 0, -655364, 9, 0, -655363, 9, 0, -655362, 10, 0, -655361, 10, 0, -720896, 10, 0, -589843, 9, 0, -589842, 9, 0, -589841, 9, 0, -589840, 9, 0, -589839, 9, 0, -589838, 9, 0, -589837, 9, 0, -589836, 10, 0, -589835, 9, 0, -589834, 9, 0, -589833, 10, 0, -589832, 9, 0, -589831, 10, 0, -589830, 9, 0, -589829, 9, 0, -589828, 9, 0, -589827, 10, 0, -589826, 10, 0, -589825, 9, 0, -655360, 9, 0, -524307, 10, 0, -524306, 10, 0, -524305, 9, 0, -524304, 10, 0, -524303, 9, 0, -524302, 9, 0, -524301, 9, 0, -524300, 10, 0, -524299, 9, 0, -524298, 10, 0, -524297, 10, 0, -524296, 9, 0, -524295, 9, 0, -524294, 10, 0, -524293, 9, 0, -524292, 9, 0, -524291, 10, 0, -524290, 9, 0, -524289, 9, 0, -589824, 9, 0, -458771, 10, 0, -458770, 10, 0, -458769, 9, 0, -458768, 9, 0, -458767, 10, 0, -458766, 9, 0, -458765, 9, 0, -458764, 10, 0, -458763, 10, 0, -458762, 9, 0, -458761, 9, 0, -458760, 10, 0, -458759, 10, 0, -458758, 9, 0, -458757, 9, 0, -458756, 10, 0, -458755, 10, 0, -458754, 10, 0, -458753, 9, 0, -524288, 10, 0, -393235, 9, 0, -393234, 10, 0, -393233, 10, 0, -393232, 10, 0, -393231, 9, 0, -393230, 9, 0, -393229, 9, 0, -393228, 9, 0, -393227, 10, 0, -393226, 9, 0, -393225, 10, 0, -393224, 10, 0, -393223, 9, 0, -393222, 10, 0, -393221, 9, 0, -393220, 9, 0, -393219, 9, 0, -393218, 10, 0, -393217, 9, 0, -458752, 10, 0, -327699, 10, 0, -327698, 10, 0, -327697, 9, 0, -327696, 9, 0, -327695, 9, 0, -327694, 10, 0, -327693, 9, 0, -327692, 9, 0, -327691, 9, 0, -327690, 10, 0, -327689, 10, 0, -327688, 10, 0, -327687, 9, 0, -327686, 9, 0, -327685, 10, 0, -327684, 10, 0, -327683, 9, 0, -327682, 9, 0, -327681, 9, 0, -393216, 9, 0, -262163, 10, 0, -262162, 9, 0, -262161, 9, 0, -262160, 10, 0, -262159, 9, 0, -262158, 9, 0, -262157, 9, 0, -262156, 10, 0, -262155, 10, 0, -262154, 10, 0, -262153, 10, 0, -262152, 10, 0, -262151, 10, 0, -262150, 9, 0, -262149, 10, 0, -262148, 10, 0, -262147, 10, 0, -262146, 9, 0, -262145, 10, 0, -327680, 9, 0, -196627, 9, 0, -196626, 9, 0, -196625, 9, 0, -196624, 9, 0, -196623, 9, 0, -196622, 10, 0, -196621, 9, 0, -196620, 10, 0, -196619, 9, 0, -196618, 9, 0, -196617, 9, 0, -196616, 9, 0, -196615, 9, 0, -196614, 9, 0, -196613, 10, 0, -196612, 9, 0, -196611, 9, 0, -196610, 9, 0, -196609, 9, 0, -262144, 9, 0, -131091, 10, 0, -131090, 9, 0, -131089, 9, 0, -131088, 10, 0, -131087, 9, 0, -131086, 10, 0, -131085, 10, 0, -131084, 9, 0, -131083, 10, 0, -131082, 4, 0, -131081, 4, 0, -131080, 10, 0, -131079, 10, 0, -131078, 9, 0, -131077, 10, 0, -131076, 10, 0, -131075, 10, 0, -131074, 9, 0, -131073, 9, 0, -196608, 9, 0, -65555, 9, 0, -65554, 9, 0, -65553, 10, 0, -65552, 9, 0, -65551, 9, 0, -65550, 10, 0, -65549, 10, 0, -65548, 9, 0, -65547, 9, 0, -65546, 4, 0, -65545, 4, 0, -65544, 10, 0, -65543, 10, 0, -65542, 9, 0, -65541, 9, 0, -65540, 9, 0, -65539, 9, 0, -65538, 9, 0, -65537, 9, 0, -131072, 9, 0, -19, 9, 0, -18, 10, 0, -17, 10, 0, -16, 9, 0, -15, 10, 0, -14, 9, 0, -13, 10, 0, -12, 9, 0, -11, 9, 0, -10, 4, 0, -9, 4, 0, -8, 9, 0, -7, 9, 0, -6, 9, 0, -5, 9, 0, -4, 10, 0, -3, 10, 0, -2, 10, 0, -1, 9, 0, -65536, 10, 0, 65517, 9, 0, 65518, 10, 0, 65519, 10, 0, 65520, 10, 0, 65521, 10, 0, 65522, 9, 0, 65523, 10, 0, 65524, 10, 0, 65525, 10, 0, 65526, 4, 0, 65527, 4, 0, 65528, 10, 0, 65529, 9, 0, 65530, 10, 0, 65531, 9, 0, 65532, 9, 0, 65533, 9, 0, 65534, 10, 0, 65535, 10, 0, 0, 9, 0 )
 script = ExtResource( 11 )
 
 [node name="YSorting" type="YSort" parent="Base_ground"]
 script = SubResource( 3 )
 
 [node name="boat" type="KinematicBody2D" parent="Base_ground/YSorting"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource( 3 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Base_ground/YSorting/boat"]
-polygon = PoolVector2Array( -1286, -498, -1053, -480, -1064, -407, -1156, -375, -1376, -382, -1423, -448 )
+polygon = PoolVector2Array( -1088, -524, -1014, -479, -1105, -408, -1156, -375, -1241, -330, -1335, -394 )
 
 [node name="Sprite" type="Sprite" parent="Base_ground/YSorting/boat"]
-position = Vector2( -1230, -459 )
+position = Vector2( -1206, -457 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 1 )
 
@@ -73,7 +78,7 @@ position = Vector2( -1230, -441 )
 shape = SubResource( 4 )
 
 [node name="player" type="KinematicBody2D" parent="Base_ground/YSorting"]
-position = Vector2( -992, -466 )
+position = Vector2( -993, -466 )
 collision_layer = 2
 collision_mask = 3
 script = ExtResource( 6 )
@@ -87,7 +92,82 @@ position = Vector2( 0, 152 )
 texture = ExtResource( 2 )
 offset = Vector2( 0, -180 )
 
+[node name="Tree3" parent="Base_ground/YSorting" instance=ExtResource( 10 )]
+position = Vector2( 1724, -1460 )
+
+[node name="Rock" parent="Base_ground/YSorting" instance=ExtResource( 8 )]
+position = Vector2( 1453, -1588 )
+
+[node name="Rock2" parent="Base_ground/YSorting" instance=ExtResource( 8 )]
+position = Vector2( 862, -1698 )
+
+[node name="Tree4" parent="Base_ground/YSorting" instance=ExtResource( 10 )]
+position = Vector2( -414, -957 )
+
+[node name="Tree5" parent="Base_ground/YSorting" instance=ExtResource( 10 )]
+position = Vector2( -478, -1534 )
+
+[node name="Rock3" parent="Base_ground/YSorting" instance=ExtResource( 8 )]
+position = Vector2( 10, -1602 )
+
+[node name="Tree6" parent="Base_ground/YSorting" instance=ExtResource( 10 )]
+position = Vector2( 972, -946 )
+
+[node name="Tree13" parent="Base_ground/YSorting" instance=ExtResource( 10 )]
+position = Vector2( -1379, -1739 )
+
+[node name="Tree14" parent="Base_ground/YSorting" instance=ExtResource( 10 )]
+position = Vector2( 1018, -398 )
+
+[node name="Tree15" parent="Base_ground/YSorting" instance=ExtResource( 10 )]
+position = Vector2( 1651, -1016 )
+
+[node name="Tree16" parent="Base_ground/YSorting" instance=ExtResource( 10 )]
+position = Vector2( 33, -1168 )
+
+[node name="Tree17" parent="Base_ground/YSorting" instance=ExtResource( 10 )]
+position = Vector2( -433, -55 )
+
+[node name="Tree18" parent="Base_ground/YSorting" instance=ExtResource( 10 )]
+position = Vector2( 428, -734 )
+
+[node name="Tree19" parent="Base_ground/YSorting" instance=ExtResource( 10 )]
+position = Vector2( 314, -2291 )
+
+[node name="Tree20" parent="Base_ground/YSorting" instance=ExtResource( 10 )]
+position = Vector2( -571, -2039 )
+
+[node name="Rock21" parent="Base_ground/YSorting" instance=ExtResource( 8 )]
+position = Vector2( -190, -550 )
+
+[node name="Rock22" parent="Base_ground/YSorting" instance=ExtResource( 8 )]
+position = Vector2( -1342, -1365 )
+
+[node name="Rock23" parent="Base_ground/YSorting" instance=ExtResource( 8 )]
+position = Vector2( -1650, -1568 )
+
+[node name="Rock24" parent="Base_ground/YSorting" instance=ExtResource( 8 )]
+position = Vector2( 2321, -1168 )
+
+[node name="Rock25" parent="Base_ground/YSorting" instance=ExtResource( 8 )]
+position = Vector2( 423, -1206 )
+
+[node name="Rock26" parent="Base_ground/YSorting" instance=ExtResource( 8 )]
+position = Vector2( 1099, -2091 )
+
+[node name="Rock27" parent="Base_ground/YSorting" instance=ExtResource( 8 )]
+position = Vector2( 514, -245 )
+
+[node name="Rock28" parent="Base_ground/YSorting" instance=ExtResource( 8 )]
+position = Vector2( -43, -1986 )
+
+[node name="Rock29" parent="Base_ground/YSorting" instance=ExtResource( 8 )]
+position = Vector2( -866, -1739 )
+
+[node name="Tree2" parent="Base_ground/YSorting" instance=ExtResource( 10 )]
+position = Vector2( -1151, -1030 )
+
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 768, -1525 )
+position = Vector2( -365, -914 )
 current = true
-zoom = Vector2( 5, 5 )
+zoom = Vector2( 3, 3 )
