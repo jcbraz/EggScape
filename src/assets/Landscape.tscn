@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Modeling/results/PIctures/PNGs/Boat1.png" type="Texture" id=1]
 [ext_resource path="res://Modeling/results/PIctures/PNGs/Character_Standing_DownRight.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://src/assets/GUI.gd" type="Script" id=9]
 [ext_resource path="res://src/assets/item_screens/Tree.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/assets/Base_ground.gd" type="Script" id=11]
+[ext_resource path="res://Interface/Interface.tscn" type="PackedScene" id=12]
 
 [sub_resource type="GDScript" id=3]
 script/source = "extends YSort
@@ -473,7 +474,7 @@ position = Vector2( 13835, -7704 )
 position = Vector2( 8239, -6402 )
 
 [node name="Rock29" parent="Base_ground/YSorting" instance=ExtResource( 8 )]
-position = Vector2( -866, -1739 )
+position = Vector2( -840, -1724 )
 
 [node name="Tree2" parent="Base_ground/YSorting" instance=ExtResource( 10 )]
 position = Vector2( -1151, -1030 )
@@ -482,3 +483,9 @@ position = Vector2( -1151, -1030 )
 position = Vector2( -365, -914 )
 current = true
 zoom = Vector2( 3, 3 )
+
+[node name="Interface" parent="Camera2D" instance=ExtResource( 12 )]
+
+[connection signal="granite_changed" from="GUI" to="Camera2D/Interface" method="_on_GUI_granite_changed"]
+[connection signal="logs_changed" from="GUI" to="Camera2D/Interface" method="_on_GUI_logs_changed"]
+[connection signal="spade_changed" from="GUI" to="Camera2D/Interface" method="_on_GUI_spade_changed"]

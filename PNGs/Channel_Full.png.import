@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Channel_Full.png-bee5b62f9056068cb8f51001455dfa40.stex"
+path="res://.import/Channel_Full.png-8cf58469863811b54f22b7c1154a2d81.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Modeling/results/PIctures/PNGs/Channel_Full.png"
-dest_files=[ "res://.import/Channel_Full.png-bee5b62f9056068cb8f51001455dfa40.stex" ]
+source_file="res://PNGs/Channel_Full.png"
+dest_files=[ "res://.import/Channel_Full.png-8cf58469863811b54f22b7c1154a2d81.stex" ]
 
 [params]
 

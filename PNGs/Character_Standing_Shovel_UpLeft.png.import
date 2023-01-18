@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Character_Standing_Shovel_UpLeft.png-58f70cfc7b1da14ac0ea9b5f5894a9fa.stex"
+path="res://.import/Character_Standing_Shovel_UpLeft.png-8a2547d51b89be8f18168f155d9687bf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Modeling/results/PIctures/PNGs/Character_Standing_Shovel_UpLeft.png"
-dest_files=[ "res://.import/Character_Standing_Shovel_UpLeft.png-58f70cfc7b1da14ac0ea9b5f5894a9fa.stex" ]
+source_file="res://PNGs/Character_Standing_Shovel_UpLeft.png"
+dest_files=[ "res://.import/Character_Standing_Shovel_UpLeft.png-8a2547d51b89be8f18168f155d9687bf.stex" ]
 
 [params]
 

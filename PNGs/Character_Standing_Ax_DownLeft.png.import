@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Character_Standing_Ax_DownLeft.png-7ff54f62b10a4b76702d7fe22147212b.stex"
+path="res://.import/Character_Standing_Ax_DownLeft.png-a120521a7c5f4f7684b393987386e63b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Modeling/results/PIctures/PNGs/Character_Standing_Ax_DownLeft.png"
-dest_files=[ "res://.import/Character_Standing_Ax_DownLeft.png-7ff54f62b10a4b76702d7fe22147212b.stex" ]
+source_file="res://PNGs/Character_Standing_Ax_DownLeft.png"
+dest_files=[ "res://.import/Character_Standing_Ax_DownLeft.png-a120521a7c5f4f7684b393987386e63b.stex" ]
 
 [params]
 

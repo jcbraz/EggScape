@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Channel_NoWalls.png-f12bf1bbba1f353c32b54d5dde379f5b.stex"
+path="res://.import/Channel_NoWalls.png-f6ad598482d503c361caf893c2e54771.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Modeling/results/PIctures/PNGs/Channel_NoWalls.png"
-dest_files=[ "res://.import/Channel_NoWalls.png-f12bf1bbba1f353c32b54d5dde379f5b.stex" ]
+source_file="res://PNGs/Channel_NoWalls.png"
+dest_files=[ "res://.import/Channel_NoWalls.png-f6ad598482d503c361caf893c2e54771.stex" ]
 
 [params]
 

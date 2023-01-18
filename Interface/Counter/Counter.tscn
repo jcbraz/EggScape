@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Interface/Counter/label_HP_bg.png" type="Texture" id=1]
+[ext_resource path="res://Interface/Counter/Logs/Tree2_Logs.png" type="Texture" id=2]
+[ext_resource path="res://Interface/Counter/theme/font/default_font.tres" type="Theme" id=3]
+
+[node name="Counter" type="NinePatchRect"]
+margin_right = 201.0
+margin_bottom = 91.0
+rect_min_size = Vector2( 200, 30 )
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 120.203, 46.0882 )
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -153.0
+margin_top = -181.5
+margin_right = 103.0
+margin_bottom = 330.5
+rect_scale = Vector2( 0.760001, 0.68 )
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="Number" type="Label" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -45.5
+margin_right = 95.0
+margin_bottom = 45.5
+theme = ExtResource( 3 )
+text = "15"
+align = 1
+valign = 1

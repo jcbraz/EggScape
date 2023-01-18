@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Indestrucable.png-5bbff1abd905e3b3af38eb0242e8b459.stex"
+path="res://.import/Indestrucable.png-3fc3d01966e6529ecf70dd5b484ab087.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Modeling/results/PIctures/PNGs/Indestrucable.png"
-dest_files=[ "res://.import/Indestrucable.png-5bbff1abd905e3b3af38eb0242e8b459.stex" ]
+source_file="res://PNGs/Indestrucable.png"
+dest_files=[ "res://.import/Indestrucable.png-3fc3d01966e6529ecf70dd5b484ab087.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TNT_2.png-01906805599c2604219cdb3fd02f7067.stex"
+path="res://.import/TNT_2.png-fed0b90d6c448ce92790f6f11b4ea3c8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Modeling/results/PIctures/PNGs/TNT_2.png"
-dest_files=[ "res://.import/TNT_2.png-01906805599c2604219cdb3fd02f7067.stex" ]
+source_file="res://PNGs/TNT_2.png"
+dest_files=[ "res://.import/TNT_2.png-fed0b90d6c448ce92790f6f11b4ea3c8.stex" ]
 
 [params]
 

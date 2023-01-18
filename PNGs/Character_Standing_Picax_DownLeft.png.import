@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Character_Standing_Picax_DownLeft.png-7650181b0e9828892c9c3b82a3e10450.stex"
+path="res://.import/Character_Standing_Picax_DownLeft.png-ed5534275a26675acc093839d0feea67.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Modeling/results/PIctures/PNGs/Character_Standing_Picax_DownLeft.png"
-dest_files=[ "res://.import/Character_Standing_Picax_DownLeft.png-7650181b0e9828892c9c3b82a3e10450.stex" ]
+source_file="res://PNGs/Character_Standing_Picax_DownLeft.png"
+dest_files=[ "res://.import/Character_Standing_Picax_DownLeft.png-ed5534275a26675acc093839d0feea67.stex" ]
 
 [params]
 

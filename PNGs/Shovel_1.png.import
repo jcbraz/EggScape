@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Shovel_1.png-81f17e9c54cb3cb7e28750eda2cae6e5.stex"
+path="res://.import/Shovel_1.png-09e884cf51ed8a684c98027e05616f16.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Modeling/results/PIctures/PNGs/Shovel_1.png"
-dest_files=[ "res://.import/Shovel_1.png-81f17e9c54cb3cb7e28750eda2cae6e5.stex" ]
+source_file="res://PNGs/Shovel_1.png"
+dest_files=[ "res://.import/Shovel_1.png-09e884cf51ed8a684c98027e05616f16.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tree2_Logs.png-58f41f28a10d6841697cb4fe3cac4e50.stex"
+path="res://.import/Tree2_Logs.png-2536291be57c348a8c8c77f1ba3a0f41.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Modeling/results/PIctures/PNGs/Tree2_Logs.png"
-dest_files=[ "res://.import/Tree2_Logs.png-58f41f28a10d6841697cb4fe3cac4e50.stex" ]
+source_file="res://PNGs/Tree2_Logs.png"
+dest_files=[ "res://.import/Tree2_Logs.png-2536291be57c348a8c8c77f1ba3a0f41.stex" ]
 
 [params]
 

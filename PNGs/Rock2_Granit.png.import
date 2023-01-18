@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Rock2_Granit.png-5d3bad730839c3385c873d61e33b0428.stex"
+path="res://.import/Rock2_Granit.png-020c7f5b72fbf9f5f03169f1a478ca0c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Modeling/results/PIctures/PNGs/Rock2_Granit.png"
-dest_files=[ "res://.import/Rock2_Granit.png-5d3bad730839c3385c873d61e33b0428.stex" ]
+source_file="res://PNGs/Rock2_Granit.png"
+dest_files=[ "res://.import/Rock2_Granit.png-020c7f5b72fbf9f5f03169f1a478ca0c.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tree1_Breaking_3.png-d337a2cc380705ecfa02ba3a042d545d.stex"
+path="res://.import/Tree1_Breaking_3.png-b17ac5414fa57b0d762d44d486d28b2c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Modeling/results/PIctures/PNGs/Tree1_Breaking_3.png"
-dest_files=[ "res://.import/Tree1_Breaking_3.png-d337a2cc380705ecfa02ba3a042d545d.stex" ]
+source_file="res://PNGs/Tree1_Breaking_3.png"
+dest_files=[ "res://.import/Tree1_Breaking_3.png-b17ac5414fa57b0d762d44d486d28b2c.stex" ]
 
 [params]
 

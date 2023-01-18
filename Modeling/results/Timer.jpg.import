@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Timer.jpg-7f3ddee9b3699d7e5ac74a44707d3add.stex"
+path="res://.import/Timer.jpg-4edd5590c07d24cda9c4e85479f61118.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Modeling/results/PIctures/Timer.jpg"
-dest_files=[ "res://.import/Timer.jpg-7f3ddee9b3699d7e5ac74a44707d3add.stex" ]
+source_file="res://Modeling/results/Timer.jpg"
+dest_files=[ "res://.import/Timer.jpg-4edd5590c07d24cda9c4e85479f61118.stex" ]
 
 [params]
 

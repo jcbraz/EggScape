@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Intropicture_egg_in_boat.png-90df1e1df04df5949591863771d6ba40.stex"
+path="res://.import/Intropicture_egg_in_boat.png-dda993bda6c54a31e368741d7c093b4a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Modeling/results/PIctures/Intropicture_egg_in_boat.png"
-dest_files=[ "res://.import/Intropicture_egg_in_boat.png-90df1e1df04df5949591863771d6ba40.stex" ]
+source_file="res://Modeling/results/Intropicture_egg_in_boat.png"
+dest_files=[ "res://.import/Intropicture_egg_in_boat.png-dda993bda6c54a31e368741d7c093b4a.stex" ]
 
 [params]
 

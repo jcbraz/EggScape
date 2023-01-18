@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Rock2_Breaking.png-5b1319f062cb51af8c507bfeee41f61a.stex"
+path="res://.import/Rock2_Breaking.png-8614fdd764b772738dbc194bb2dfc49e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Modeling/results/PIctures/PNGs/Rock2_Breaking.png"
-dest_files=[ "res://.import/Rock2_Breaking.png-5b1319f062cb51af8c507bfeee41f61a.stex" ]
+source_file="res://PNGs/Rock2_Breaking.png"
+dest_files=[ "res://.import/Rock2_Breaking.png-8614fdd764b772738dbc194bb2dfc49e.stex" ]
 
 [params]
 

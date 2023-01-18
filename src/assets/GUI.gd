@@ -1,5 +1,10 @@
 extends CanvasLayer
 
+signal granite_changed(nr_granite)
+signal logs_changed(nr_logs)
+signal spade_changed(nr_spade)
+
+
 var action_a_state = "Off"
 var tile
 var tile_id
@@ -11,7 +16,7 @@ var loot_node
 
 var path
 
-var nr_granite = 1
+var nr_granite = 0
 var nr_logs = 0
 var nr_spade = 0
 var holding = false
@@ -78,6 +83,7 @@ func _process(delta):
 
 								tree_stage = 6
 								nr_logs += 1
+								emit_signal("logs_changed", nr_logs)
 								holding = true
 					"Rock":
 						if holding:
@@ -98,6 +104,7 @@ func _process(delta):
 								loot_node.queue_free()
 								rock_stage = 4
 								nr_granite += 1
+								emit_signal("granite_changed", nr_granite)
 								holding = true
 								#print(rock_loot_node)
 					"River":
@@ -118,15 +125,19 @@ func _process(delta):
 							print("Disabled loot area: ",river_loot_area)
 							river_stage = 0
 							nr_spade -= 1
+							emit_signal("spade_changed", nr_spade)
 							print("OFF AND RESTART")
 							action_a_state = "Off"
 					"Boat":
 						print("WE are pressing on boat")
 						
 						if nr_logs > 0 and nr_granite > 0: 
-							nr_spade += 2
 							nr_logs -= 1
+							emit_signal("logs_changed", nr_logs)
 							nr_granite -= 1
+							emit_signal("granite_changed", nr_granite)
+							nr_spade += 2
+							emit_signal("spade_changed", nr_spade)
 							print("You now have spade: ", nr_spade)
 							print("Nr of logs left: ", nr_logs)
 							print("Nr of granite left: ", nr_granite)
@@ -135,6 +146,12 @@ func _process(delta):
 						print("Your hands are free")		
 				pass
 	
+
+func _send(): #will send the updated Nr of granite, logs and spades tot he interface to update the counter
+	emit_signal("granite_changed", nr_granite)
+	emit_signal("logs_changed", nr_logs)
+	emit_signal("spade_changed", nr_spade)
+
 func OnRiverLootAreaEnter(body, tile, loot_areai):
 
 	if "boat" in str(body):

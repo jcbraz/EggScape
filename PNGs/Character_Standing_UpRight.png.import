@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Character_Standing_UpRight.png-00b170bbc41694b2b18e1b7d9ff71df2.stex"
+path="res://.import/Character_Standing_UpRight.png-e1a86fb87e126e91f75a7c2773b8cc7a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Modeling/results/PIctures/PNGs/Character_Standing_UpRight.png"
-dest_files=[ "res://.import/Character_Standing_UpRight.png-00b170bbc41694b2b18e1b7d9ff71df2.stex" ]
+source_file="res://PNGs/Character_Standing_UpRight.png"
+dest_files=[ "res://.import/Character_Standing_UpRight.png-e1a86fb87e126e91f75a7c2773b8cc7a.stex" ]
 
 [params]
 

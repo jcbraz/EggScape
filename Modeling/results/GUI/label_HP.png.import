@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/label_HP.png-1ad3db01c25f20e06dc574765c8897be.stex"
+path="res://.import/label_HP.png-2d90643e58906353a55fe1b4b49ed5f3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Modeling/results/PIctures/GUI/label_HP.png"
-dest_files=[ "res://.import/label_HP.png-1ad3db01c25f20e06dc574765c8897be.stex" ]
+source_file="res://Modeling/results/GUI/label_HP.png"
+dest_files=[ "res://.import/label_HP.png-2d90643e58906353a55fe1b4b49ed5f3.stex" ]
 
 [params]
 
