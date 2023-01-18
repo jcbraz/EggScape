@@ -106,7 +106,6 @@ func _process(delta):
 								emit_signal("granite_changed", nr_granite)
 								Global.activate_animation = true
 								Global.holding = true
-								#print(rock_loot_node)
 					"River":
 						print("river stage: ", river_stage)
 						if not nr_spade:

@@ -52,7 +52,7 @@ func  _process(delta):
 			_animated_sprite.play("ore_right_down")
 		if Input.is_action_pressed('ui_up'):
 			_animated_sprite.play("ore_left_up")
-	elif Global.activate_animation and Global.nr_spade > 0:
+	elif !Global.activate_animation and Global.nr_spade > 0:
 		if Input.is_action_pressed('ui_right'):
 			_animated_sprite.play("shovel_right_up")
 		if Input.is_action_pressed('ui_left'):
@@ -62,7 +62,6 @@ func  _process(delta):
 		if Input.is_action_pressed('ui_up'):
 			_animated_sprite.play("shovel_left_up")
 	else:
-		print(Global.nr_spade)
 		if Input.is_action_pressed('ui_right'):
 			_animated_sprite.play("walk_right_up")
 		if Input.is_action_pressed('ui_left'):
