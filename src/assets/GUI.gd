@@ -2,8 +2,8 @@ extends CanvasLayer
 
 signal granite_changed(nr_granite)
 signal logs_changed(nr_logs)
+var nr_spade = Global.nr_spade
 signal spade_changed(nr_spade)
-
 
 var action_a_state = "Off"
 var tile
@@ -17,7 +17,6 @@ var path
 
 var nr_granite = 0
 var nr_logs = 0
-var nr_spade = 0
 
 
 var river_loot_area 
@@ -126,6 +125,7 @@ func _process(delta):
 							print("Disabled loot area: ",river_loot_area)
 							river_stage = 0
 							nr_spade -= 1
+							Global.nr_spade = nr_spade
 							emit_signal("spade_changed", nr_spade)
 							print("OFF AND RESTART")
 							action_a_state = "Off"
@@ -138,6 +138,7 @@ func _process(delta):
 							nr_granite -= 1
 							emit_signal("granite_changed", nr_granite)
 							nr_spade += 2
+							Global.nr_spade = nr_spade
 							emit_signal("spade_changed", nr_spade)
 							print("You now have spade: ", nr_spade)
 							print("Nr of logs left: ", nr_logs)
