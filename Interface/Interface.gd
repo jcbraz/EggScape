@@ -22,6 +22,6 @@ func _on_GUI_logs_changed(nr_logs):
 
 func _on_GUI_spade_changed(nr_spade):
 	emit_signal("spade_changed", nr_spade)
-	print("Interface recived and sends the nr of spades: ", nr_spade)
+	print("Interface recieved and sends the nr of spades: ", nr_spade)
 
 
