@@ -11,12 +11,17 @@ config_version=4
 [application]
 
 config/name="Egg Scape"
-run/main_scene="res://src/Player.tscn"
+run/main_scene="res://src/assets/Landscape.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Global="*res://Global.gd"
+
+[display]
+
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [gui]
 

@@ -1,0 +1,85 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Modeling/results/axe.png" type="Texture" id=1]
+[ext_resource path="res://Modeling/results/GUI/label_HP_bg.png" type="Texture" id=2]
+[ext_resource path="res://Modeling/results/PIctures/PNGs/Tree1_Logs.png" type="Texture" id=3]
+[ext_resource path="res://Modeling/results/PIctures/PNGs/Rock1_Granit.png" type="Texture" id=4]
+
+[node name="GUI_interface" type="MarginContainer"]
+anchor_right = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 20.0
+margin_bottom = 20.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 40.0
+
+[node name="Counters" type="HBoxContainer" parent="HBoxContainer"]
+margin_right = 188.0
+margin_bottom = 40.0
+
+[node name="BackgroundLogs" type="NinePatchRect" parent="HBoxContainer/Counters"]
+margin_right = 60.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 60, 40 )
+texture = ExtResource( 2 )
+
+[node name="Number" type="Label" parent="HBoxContainer/Counters/BackgroundLogs"]
+margin_right = 40.0
+margin_bottom = 40.0
+text = "1"
+align = 2
+valign = 1
+
+[node name="Ttile" type="TextureRect" parent="HBoxContainer/Counters/BackgroundLogs"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 3 )
+expand = true
+
+[node name="BackgroundGranite" type="NinePatchRect" parent="HBoxContainer/Counters"]
+margin_left = 64.0
+margin_right = 124.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 60, 40 )
+texture = ExtResource( 2 )
+
+[node name="Number" type="Label" parent="HBoxContainer/Counters/BackgroundGranite"]
+margin_top = 13.0
+margin_right = 180.0
+margin_bottom = 213.0
+text = "1"
+align = 2
+valign = 1
+
+[node name="Ttile" type="TextureRect" parent="HBoxContainer/Counters/BackgroundGranite"]
+margin_top = -10.0
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="BackgroundAxe" type="NinePatchRect" parent="HBoxContainer/Counters"]
+margin_left = 128.0
+margin_right = 188.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 60, 40 )
+texture = ExtResource( 2 )
+
+[node name="Number" type="Label" parent="HBoxContainer/Counters/BackgroundAxe"]
+margin_top = 13.0
+margin_right = 180.0
+margin_bottom = 213.0
+text = "1"
+align = 2
+valign = 1
+
+[node name="Ttile" type="TextureRect" parent="HBoxContainer/Counters/BackgroundAxe"]
+margin_left = 30.0
+margin_top = 50.0
+margin_right = 130.0
+margin_bottom = 150.0
+texture = ExtResource( 1 )
+expand = true
