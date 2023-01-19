@@ -11,7 +11,7 @@ signal distance_changed(distance)
 var speed = 50
 var velocity = Vector2(5, -3)
 var direction = Vector2(45, 45)
-onready var mapscene_GUI = get_node("../../../GUI")
+#onready var mapscene_GUI = get_node("../../../GUI")
 var count = 0
 var boat_nr = 0
 	
@@ -65,4 +65,14 @@ func boat_crashing():
 	print("Boat is crashing!")
 	velocity = Vector2(0,0)
 
+func _ready():
+	$Timer.start(5)
+
+# increase the speed of the boat every 10 seconds
+func _on_Timer_timeout():
+	velocity = Vector2(velocity.x + 1000, velocity.y)
+	$Timer.start(5)
+
+
+	
 

@@ -5,12 +5,10 @@ signal logs_changed(nr_logs)
 signal spade_changed(nr_spade)
 signal info_changed(nr_info)
 
-
 var action_a_state = "Off"
 var tile
 var tile_id
 
-var object_type
 var tree_loot_node
 var rock_loot_node
 var loot_node
@@ -61,9 +59,9 @@ func _process(delta):
 				print("Nothing to do")
 				pass
 			"Loot":
-				match object_type:
+				match Global.object_type:
 					"Tree":
-						if holding:
+						if Global.holding:
 							print("Your hands are full, go load of in the boat")
 							
 						else:
@@ -87,13 +85,12 @@ func _process(delta):
 								tree_stage = 6
 								nr_logs += 1
 								emit_signal("logs_changed", nr_logs)
-								
 								nr_info = 1									#info to bring the logs back to the boat
 								emit_signal("info_changed", nr_info)
-								
-								holding = true
+                Global.activate_animation = true
+								Global.holding = true
 					"Rock":
-						if holding:
+						if Global.holding:
 							print("Your hands are full, go load of in the boat")
 							
 						else:
@@ -112,12 +109,10 @@ func _process(delta):
 								rock_stage = 4
 								nr_granite += 1
 								emit_signal("granite_changed", nr_granite)
-								
 								nr_info = 2									#info to bring the ores back to the boat
 								emit_signal("info_changed", nr_info)
-								
-								holding = true
-								#print(rock_loot_node)
+								Global.activate_animation = true
+								Global.holding = true
 					"River":
 						print("river stage: ", river_stage)
 						if not nr_spade:
@@ -136,6 +131,7 @@ func _process(delta):
 							print("Disabled loot area: ",river_loot_area)
 							river_stage = 0
 							nr_spade -= 1
+							Global.nr_spade = nr_spade
 							emit_signal("spade_changed", nr_spade)
 							
 							nr_info = 4									#info to bring repeat the process
@@ -152,6 +148,7 @@ func _process(delta):
 							nr_granite -= 1
 							emit_signal("granite_changed", nr_granite)
 							nr_spade += 2
+							Global.nr_spade = nr_spade
 							emit_signal("spade_changed", nr_spade)
 							
 							nr_info = 3									#info to extend the channel
@@ -160,7 +157,6 @@ func _process(delta):
 							print("You now have spade: ", nr_spade)
 							print("Nr of logs left: ", nr_logs)
 							print("Nr of granite left: ", nr_granite)
-						
 						elif nr_logs < 1 and nr_granite > 0:
 							nr_info = 5									#info to bring more Logs
 							emit_signal("info_changed", nr_info)
@@ -172,9 +168,8 @@ func _process(delta):
 						else:
 							nr_info = 0									#info to get more ore and Logs
 							emit_signal("info_changed", nr_info)
-						
-						holding = false
-
+              Global.holding = false
+						  Global.activate_animation = false
 						print("Your hands are free")		
 				pass
 	
@@ -192,7 +187,7 @@ func OnRiverLootAreaEnter(body, tile, loot_areai):
 	else:
 		print(body)
 		action_a_state = "Loot"
-		object_type = "River"
+		Global.object_type = "River"
 		print("river stage: ", river_stage)
 
 		if river_stage == 0 :
@@ -209,7 +204,7 @@ func OnRiverLootAreaExit(body, loot_area):
 func OnLootEnter(body, n, type):
 	#print("On general enter: ", type)
 	if "player" in str(body):
-		object_type = type
+		Global.object_type = type
 		loot_node = n
 		action_a_state = "Loot"
 		if tree_stage == 6:

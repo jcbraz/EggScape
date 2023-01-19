@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Modeling/results/PIctures/axe.png" type="Texture" id=1]
-[ext_resource path="res://Modeling/results/PIctures/GUI/label_HP_bg.png" type="Texture" id=2]
+[ext_resource path="res://Modeling/results/axe.png" type="Texture" id=1]
+[ext_resource path="res://Modeling/results/GUI/label_HP_bg.png" type="Texture" id=2]
 [ext_resource path="res://Modeling/results/PIctures/PNGs/Tree1_Logs.png" type="Texture" id=3]
 [ext_resource path="res://Modeling/results/PIctures/PNGs/Rock1_Granit.png" type="Texture" id=4]
 
