@@ -754,5 +754,7 @@ margin_right = 1525.0
 margin_bottom = 899.0
 
 [connection signal="granite_changed" from="GUI" to="Camera2D/Interface" method="_on_GUI_granite_changed"]
+[connection signal="info_changed" from="GUI" to="Camera2D/Interface" method="_on_GUI_info_changed"]
 [connection signal="logs_changed" from="GUI" to="Camera2D/Interface" method="_on_GUI_logs_changed"]
 [connection signal="spade_changed" from="GUI" to="Camera2D/Interface" method="_on_GUI_spade_changed"]
+[connection signal="distance_changed" from="Base_ground/YSorting/boat" to="Camera2D/Interface" method="_on_boat_distance_changed"]

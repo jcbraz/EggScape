@@ -1,6 +1,14 @@
 extends KinematicBody2D
+#---------------------------------------------------------------
+#These vaiables are for the calculation and transmition of the distance of the boat
+var distance = 0
+var position_now = Vector2(0, 0)
+var startposition = Vector2(0, 0)
+var frame = 1;
 
-
+signal distance_changed(distance)
+#---------------------------------------------------------------
+var speed = 50
 var velocity = Vector2(5, -3)
 var direction = Vector2(45, 45)
 #onready var mapscene_GUI = get_node("../../../GUI")
@@ -22,6 +30,22 @@ func _physics_process(delta):
 	count += 1
 	#velocity = Vector2(10, -6)
 	move_and_collide(velocity * delta)
+	
+	#---------------------------------------------------------------
+	#these part calculates the distance the boat made so far
+	#print("frame:  ", frame)
+	if frame < 2:
+		startposition = get_global_position()
+		frame += 1
+		
+	position_now = get_global_position()
+	var entfernt = int((position-startposition).length()/100)
+	if distance != entfernt:
+		distance = entfernt
+		#print("distance so far: ", distance)
+		emit_signal("distance_changed", distance)
+	#---------------------------------------------------------------
+	
 	if count > 20:
 
 		count = 0
