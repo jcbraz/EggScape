@@ -3,6 +3,7 @@ extends CanvasLayer
 signal granite_changed(nr_granite)
 signal logs_changed(nr_logs)
 signal spade_changed(nr_spade)
+signal info_changed(nr_info)
 
 
 var action_a_state = "Off"
@@ -20,6 +21,7 @@ var nr_granite = 0
 var nr_logs = 0
 var nr_spade = 0
 var holding = false
+var nr_info = 0 # 0= cut down logs and Ores by standing in front of them and hitting 'f' / 1= bring Logs to the boat / 2= bring ores to the boat / 3= go to the front of the channel and dig further / 4= repeat until the boat reaches the end
 
 var river_loot_area 
 
@@ -63,6 +65,7 @@ func _process(delta):
 					"Tree":
 						if holding:
 							print("Your hands are full, go load of in the boat")
+							
 						else:
 						#tree_loot_node = loot_node
 							if tree_stage <= 4:
@@ -84,6 +87,10 @@ func _process(delta):
 								tree_stage = 6
 								nr_logs += 1
 								emit_signal("logs_changed", nr_logs)
+								
+								nr_info = 1									#info to bring the logs back to the boat
+								emit_signal("info_changed", nr_info)
+								
 								holding = true
 					"Rock":
 						if holding:
@@ -105,6 +112,10 @@ func _process(delta):
 								rock_stage = 4
 								nr_granite += 1
 								emit_signal("granite_changed", nr_granite)
+								
+								nr_info = 2									#info to bring the ores back to the boat
+								emit_signal("info_changed", nr_info)
+								
 								holding = true
 								#print(rock_loot_node)
 					"River":
@@ -126,6 +137,10 @@ func _process(delta):
 							river_stage = 0
 							nr_spade -= 1
 							emit_signal("spade_changed", nr_spade)
+							
+							nr_info = 4									#info to bring repeat the process
+							emit_signal("info_changed", nr_info)
+							
 							print("OFF AND RESTART")
 							action_a_state = "Off"
 					"Boat":
@@ -138,11 +153,28 @@ func _process(delta):
 							emit_signal("granite_changed", nr_granite)
 							nr_spade += 2
 							emit_signal("spade_changed", nr_spade)
+							
+							nr_info = 3									#info to extend the channel
+							emit_signal("info_changed", nr_info)
+							
 							print("You now have spade: ", nr_spade)
 							print("Nr of logs left: ", nr_logs)
 							print("Nr of granite left: ", nr_granite)
-
+						
+						elif nr_logs < 1 and nr_granite > 0:
+							nr_info = 5									#info to bring more Logs
+							emit_signal("info_changed", nr_info)
+							
+						elif nr_logs > 0 and nr_granite < 1:
+							nr_info = 6									#info to bring more Ore
+							emit_signal("info_changed", nr_info)
+							
+						else:
+							nr_info = 0									#info to get more ore and Logs
+							emit_signal("info_changed", nr_info)
+						
 						holding = false
+
 						print("Your hands are free")		
 				pass
 	

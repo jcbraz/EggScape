@@ -5,6 +5,8 @@ extends Control
 signal granite_changed(nr_granite)
 signal logs_changed(nr_logs)
 signal spade_changed(nr_spade)
+signal distance_changed(distance)
+signal info_changed(nr_info)
 
 
 # Called when the node enters the scene tree for the first time.
@@ -24,4 +26,11 @@ func _on_GUI_spade_changed(nr_spade):
 	emit_signal("spade_changed", nr_spade)
 	print("Interface recived and sends the nr of spades: ", nr_spade)
 
+func _on_boat_distance_changed(distance):
+	emit_signal("distance_changed", distance)
+	print("Interface recived and sends the distance of the boat: ", distance)
 
+
+func _on_GUI_info_changed(nr_info):
+	emit_signal("info_changed", nr_info)
+	print("Interface recived and sends the information what to do next: ", nr_info)

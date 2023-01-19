@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Interface/Counter/Counter.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Interface/Counter/Info/Info_screen.gd" type="Script" id=2]
+
+[node name="Info_screen" instance=ExtResource( 1 )]
+margin_right = 1692.0
+script = ExtResource( 2 )
+
+[node name="TextureRect" parent="." index="0"]
+texture = null
+
+[node name="Number" parent="." index="1"]
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 0.0
+margin_right = 0.0
+margin_bottom = 0.0
+text = "cut down logs and Ores by standing in front of them and hitting f"
