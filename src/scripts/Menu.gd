@@ -8,7 +8,7 @@ func _ready():
 
 func _on_StartGameButton_pressed():
 # warning-ignore:return_value_discarded
-	get_tree().change_scene("res://src/assets/Map.tscn");
+	get_tree().change_scene("res://src/assets/Landscape.tscn");
 	
 
 func _on_ControlsButton_pressed():

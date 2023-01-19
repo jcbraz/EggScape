@@ -65,6 +65,7 @@ func _physics_process(delta):
 func boat_crashing():
 	print("Boat is crashing!")
 	velocity = Vector2(0,0)
+	get_tree().change_scene("res://src/assets/GameOver.tscn")
 
 func _ready():
 	$Timer.start(5)
