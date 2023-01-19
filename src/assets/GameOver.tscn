@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/assets/fonts/forgottenplaybill.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://src/assets/Controls.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 22
+font_data = ExtResource( 2 )
+
+[node name="Controls" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -662, 101 )
+script = ExtResource( 5 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -1.0
+margin_top = 2.0
+margin_right = 1022.0
+margin_bottom = 599.0
+rect_pivot_offset = Vector2( -815, 32 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="Heading" type="Label" parent="ColorRect"]
+margin_left = 280.0
+margin_top = 20.0
+margin_right = 776.0
+margin_bottom = 110.0
+custom_fonts/font = SubResource( 1 )
+text = "The boat crashed!"
+
+[node name="MainMenuButton" type="Button" parent="ColorRect"]
+margin_left = 287.0
+margin_top = 507.0
+margin_right = 509.0
+margin_bottom = 547.0
+custom_fonts/font = SubResource( 6 )
+text = "MAIN MENU"
+
+[node name="QuitGameButton" type="Button" parent="ColorRect"]
+margin_left = 556.0
+margin_top = 507.0
+margin_right = 778.0
+margin_bottom = 547.0
+custom_fonts/font = SubResource( 6 )
+text = "QUIT GAME"
+
+[connection signal="pressed" from="ColorRect/MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
+[connection signal="pressed" from="ColorRect/QuitGameButton" to="." method="_on_QuitGameButton_pressed"]
