@@ -102,5 +102,4 @@ func update_river(x, y, river_stage):
 		loot_area_instance.connect("body_exited", mapscene_GUI, "OnRiverLootAreaExit", [loot_area_instance])
 	
 func _process(delta):
-
 	pass
