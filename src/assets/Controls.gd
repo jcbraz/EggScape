@@ -2,7 +2,7 @@ extends Control
 
 
 func _ready():
-	pass;
+	pass
 
 func _on_GoBackButton_pressed():
 	var menu = load("res://src/assets/Menu.tscn").instance();
@@ -15,3 +15,4 @@ func _on_MainMenuButton_pressed():
 
 func _on_QuitGameButton_pressed():
 	get_tree().quit()
+	

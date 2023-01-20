@@ -8,7 +8,6 @@ var frame = 1;
 
 signal distance_changed(distance)
 #---------------------------------------------------------------
-var speed = 50
 var velocity = Vector2(5, -3)
 var direction = Vector2(45, 45)
 #onready var mapscene_GUI = get_node("../../../GUI")
@@ -46,7 +45,10 @@ func _physics_process(delta):
 		#print("distance so far: ", distance)
 		emit_signal("distance_changed", distance)
 	#---------------------------------------------------------------
-	
+	# if distance is multople of 5, increase the velocity by 20%
+	if distance % 10 == 0:
+		velocity = velocity * 1.0008
+
 	if count > 20:
 
 		count = 0
@@ -61,19 +63,12 @@ func _physics_process(delta):
 		var collision = get_slide_collision(index)
 		if collision.collider is StaticBody2D:
 			print("Collided with static body")
-	
+
 func boat_crashing():
 	print("Boat is crashing!")
 	velocity = Vector2(0,0)
 	get_tree().change_scene("res://src/assets/GameOver.tscn")
 
-func _ready():
-	$Timer.start(5)
-
-# increase the speed of the boat every 10 seconds
-func _on_Timer_timeout():
-	velocity = Vector2(velocity.x + 1000, velocity.y)
-	$Timer.start(5)
 
 
 	

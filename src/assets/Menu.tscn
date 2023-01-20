@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://src/scripts/Menu.gd" type="Script" id=1]
 [ext_resource path="res://src/assets/fonts/forgottenplaybill.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://src/assets/ui/UI/arrow-UP.png" type="Texture" id=3]
 [ext_resource path="res://src/assets/ui/UI/grey_button13.png" type="Texture" id=4]
 [ext_resource path="res://output.webm" type="VideoStream" id=5]
 
@@ -84,56 +85,43 @@ custom_fonts/font = SubResource( 6 )
 text = "= INTERACT"
 
 [node name="WSquare" type="Sprite" parent="."]
-position = Vector2( 174, 422 )
+position = Vector2( 177, 422 )
 texture = ExtResource( 4 )
 
-[node name="WLabel" type="Label" parent="WSquare"]
-margin_left = -6.0
-margin_top = -16.0
-margin_right = 11.0
-margin_bottom = 19.0
-custom_colors/font_color = Color( 0.371094, 0.313465, 0.212614, 1 )
-custom_fonts/font = SubResource( 7 )
-text = "W"
+[node name="Arrow-Up" type="Sprite" parent="WSquare"]
+position = Vector2( 0, -1 )
+scale = Vector2( 0.034375, 0.03625 )
+texture = ExtResource( 3 )
 
 [node name="ASquare" type="Sprite" parent="."]
 position = Vector2( 116, 473 )
 texture = ExtResource( 4 )
 
-[node name="ALabel" type="Label" parent="ASquare"]
-margin_left = -5.0
-margin_top = -16.0
-margin_right = 12.0
-margin_bottom = 19.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 7 )
-text = "A"
+[node name="Arrow-Left" type="Sprite" parent="ASquare"]
+position = Vector2( -2, 6.10352e-05 )
+rotation = -1.57102
+scale = Vector2( 0.0332367, 0.0371929 )
+texture = ExtResource( 3 )
 
 [node name="DSquare" type="Sprite" parent="."]
-position = Vector2( 174, 474 )
+position = Vector2( 177, 474 )
 texture = ExtResource( 4 )
 
-[node name="SLabel" type="Label" parent="DSquare"]
-margin_left = -7.0
-margin_top = -17.0
-margin_right = 10.0
-margin_bottom = 18.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 7 )
-text = "S"
+[node name="Arrow-Down" type="Sprite" parent="DSquare"]
+position = Vector2( -1, 1 )
+rotation = 3.13177
+scale = Vector2( 0.033037, 0.0350327 )
+texture = ExtResource( 3 )
 
 [node name="SSquare" type="Sprite" parent="."]
-position = Vector2( 231, 475 )
+position = Vector2( 235, 474 )
 texture = ExtResource( 4 )
 
-[node name="DLabel2" type="Label" parent="SSquare"]
-margin_left = -8.0
-margin_top = -16.0
-margin_right = 9.0
-margin_bottom = 19.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 7 )
-text = "D"
+[node name="Arrow-Right" type="Sprite" parent="SSquare"]
+position = Vector2( 2, 0 )
+rotation = 1.56368
+scale = Vector2( 0.0342096, 0.0370953 )
+texture = ExtResource( 3 )
 
 [node name="FSquare" type="Sprite" parent="."]
 position = Vector2( 174, 541 )

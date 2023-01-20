@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
+[ext_resource path="res://src/assets/Score.gd" type="Script" id=1]
 [ext_resource path="res://src/assets/fonts/forgottenplaybill.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://src/assets/fonts/forgottenplaybill.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://src/assets/Controls.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
@@ -8,6 +10,10 @@ size = 60
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 40
+font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 22
@@ -25,15 +31,43 @@ margin_top = 2.0
 margin_right = 1022.0
 margin_bottom = 599.0
 rect_pivot_offset = Vector2( -815, 32 )
-color = Color( 0, 0, 0, 1 )
+color = Color( 0.196078, 0.223529, 0.635294, 1 )
 
 [node name="Heading" type="Label" parent="ColorRect"]
 margin_left = 280.0
 margin_top = 20.0
 margin_right = 776.0
 margin_bottom = 110.0
+custom_colors/font_color = Color( 0.996078, 0.94902, 0.866667, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "The boat crashed!"
+
+[node name="DistanceSubHeader" type="Label" parent="ColorRect"]
+margin_left = 340.0
+margin_top = 140.0
+margin_right = 700.0
+margin_bottom = 189.0
+custom_colors/font_color = Color( 0.996078, 0.94902, 0.866667, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "DISTANCE TRAVELLED:"
+
+[node name="Score" type="Label" parent="ColorRect"]
+margin_left = 492.0
+margin_top = 255.0
+margin_right = 565.0
+margin_bottom = 332.0
+custom_colors/font_color = Color( 0.996078, 0.94902, 0.866667, 1 )
+custom_fonts/font = SubResource( 1 )
+script = ExtResource( 1 )
+
+[node name="Meters" type="Label" parent="ColorRect"]
+margin_left = 441.0
+margin_top = 382.0
+margin_right = 581.0
+margin_bottom = 431.0
+custom_colors/font_color = Color( 0.996078, 0.94902, 0.866667, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "METERS"
 
 [node name="MainMenuButton" type="Button" parent="ColorRect"]
 margin_left = 287.0
