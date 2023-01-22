@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/assets/item_screens/RockLootArea.gd" type="Script" id=1]
+[ext_resource path="res://Modeling/results/PIctures/PNGs/Rock1_1Full.png" type="Texture" id=2]
+[ext_resource path="res://src/assets/item_screens/Rock.gd" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 176.102
+
+[node name="Rock" type="StaticBody2D"]
+position = Vector2( -177, 240 )
+script = ExtResource( 3 )
+
+[node name="RockSprite" type="Sprite" parent="."]
+position = Vector2( 0, 50 )
+texture = ExtResource( 2 )
+
+[node name="RockCol" type="CollisionPolygon2D" parent="."]
+light_mask = 3
+position = Vector2( 1, 35 )
+build_mode = 1
+polygon = PoolVector2Array( 126, 46, 125, 35, -2, -45, -130, 33, -130, 41, 3, 121 )
+
+[node name="RockLootArea" type="Area2D" parent="." groups=["TreeLoot"]]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RockLootArea"]
+position = Vector2( 0, 64 )
+shape = SubResource( 2 )

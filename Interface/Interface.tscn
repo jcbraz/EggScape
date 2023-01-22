@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Interface/Counter/Ores/Ore_Counter.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Interface/Counter/Logs/Log_Counter.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Interface/Counter/Shovels/Shovel_Counter.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Interface/Interface.gd" type="Script" id=4]
+[ext_resource path="res://Interface/Counter/Logs/Log_Counter.gd" type="Script" id=5]
+[ext_resource path="res://Interface/Counter/Ores/Ore_Counter.gd" type="Script" id=6]
+[ext_resource path="res://Interface/Counter/Shovels/Shovel_Counter.gd" type="Script" id=7]
+[ext_resource path="res://Interface/Counter/Distance/Distance_Counter.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Interface/Counter/Info/Info_screen.tscn" type="PackedScene" id=9]
+
+[node name="Interface" type="Control"]
+margin_left = -1676.0
+margin_top = -965.0
+margin_right = 1671.0
+margin_bottom = 879.0
+script = ExtResource( 4 )
+
+[node name="Info_screen" parent="." instance=ExtResource( 9 )]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -787.5
+margin_top = 16.0
+margin_right = 787.5
+margin_bottom = 112.0
+rect_scale = Vector2( 1.16, 1.44 )
+
+[node name="Distance_Counter" parent="." instance=ExtResource( 8 )]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -466.0
+margin_top = 20.0
+margin_right = -160.0
+margin_bottom = 122.0
+rect_min_size = Vector2( 300, 30 )
+rect_scale = Vector2( 1.48, 1.40818 )
+
+[node name="Backpack" type="HBoxContainer" parent="."]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 732.0
+margin_bottom = 110.0
+rect_scale = Vector2( 1.4, 1.44 )
+
+[node name="Log_Counter" parent="Backpack" instance=ExtResource( 2 )]
+margin_right = 200.0
+margin_bottom = 94.0
+script = ExtResource( 5 )
+
+[node name="Ore_Counter" parent="Backpack" instance=ExtResource( 1 )]
+margin_left = 204.0
+margin_right = 404.0
+margin_bottom = 94.0
+script = ExtResource( 6 )
+
+[node name="Shovel_Counter" parent="Backpack" instance=ExtResource( 3 )]
+margin_left = 408.0
+margin_right = 608.0
+margin_bottom = 94.0
+script = ExtResource( 7 )
+
+[connection signal="distance_changed" from="." to="Distance_Counter" method="_on_Interface_distance_changed"]
+[connection signal="granite_changed" from="." to="Backpack/Ore_Counter" method="_on_Interface_granite_changed"]
+[connection signal="info_changed" from="." to="Info_screen" method="_on_Interface_info_changed"]
+[connection signal="logs_changed" from="." to="Backpack/Log_Counter" method="_on_Interface_logs_changed"]
+[connection signal="spade_changed" from="." to="Backpack/Shovel_Counter" method="_on_Interface_spade_changed"]
